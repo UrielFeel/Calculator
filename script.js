@@ -6,12 +6,14 @@ class Calculator{
     this.operator = undefined
     this.currentNum = "";
     this.previusNum = "";
+    this.aux = false;
   }
 
   clear = function () {
     this.operator = undefined
     this.currentNum = "";
     this.previusNum = "";
+    this.aux = false;
   }
 
   delete = function () {
@@ -26,6 +28,10 @@ class Calculator{
   }
 
   addNumber = function (number) {
+    if (this.aux && this.operator == undefined) {
+      this.currentNum = ""
+      this.aux = false;
+    }
     if (number === '.' && this.currentNum.includes('.')) return;
     this.currentNum = String(this.currentNum) + String(number);
     
@@ -46,6 +52,7 @@ class Calculator{
     this.operator = operator;
     this.previusNum = this.currentNum;
     this.currentNum = "";
+    this.aux = true
   }
 
   calculate = function () {
@@ -78,6 +85,7 @@ class Calculator{
     this.currentNum = calc;
     this.operator = undefined;
     this.previusNum = ""
+    
 
   }
 
