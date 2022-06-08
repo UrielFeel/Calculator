@@ -32,9 +32,9 @@ class Calculator{
   }
 
   chooseOperation = function (operator) {
-    if (this.previusNum == "") {
+    //if (this.previusNum !== "") {
       this.calculate();
-    }
+    //}
     if (this.currentNum === "" && this.operator) {
       this.operator = operator;
     }
