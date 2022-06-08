@@ -52,7 +52,7 @@ class Calculator{
     this.operator = operator;
     this.previusNum = this.currentNum;
     this.currentNum = "";
-    this.aux = true
+    
   }
 
   calculate = function () {
@@ -64,6 +64,8 @@ class Calculator{
 
     if (isNaN(num1) || isNaN(num2)) return;
 
+    this.aux = true
+    
     switch (this.operator) {
       case "+":
         calc = num1 + num2;
